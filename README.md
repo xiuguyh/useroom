@@ -53,7 +53,7 @@ UserOOM 采用用户态提前杀进程的方式，避免系统进入 Near-OOM �
 
 1. **克隆项目**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/xiuguyh/useroom.git
    cd useroom
    ```
 
