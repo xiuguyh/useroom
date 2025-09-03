@@ -1,0 +1,20 @@
+[Unit]
+Description=UserOOM - 内存监控与进程管理工具
+Documentation=https://github.com/yourusername/earlyoom-clone
+After=network.target
+
+[Service]
+Type=simple
+# 可执行文件路径请根据实际安装位置修改
+ExecStart=/usr/local/bin/useroom -debug -m 15 -mk 10 -protect "systemd,init" -ignore-swap
+Restart=always
+RestartSec=5
+User=root
+Group=root
+# 限制服务自身的内存使用，防止服务本身成为问题
+MemoryLimit=100M
+# 服务启动超时设置
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target
